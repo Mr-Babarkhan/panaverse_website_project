@@ -1,5 +1,6 @@
 "use client";
 import CTA from "@/components/cta";
+import FAQS from "@/components/FAQS";
 import Feature from "@/components/features/feature";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
@@ -25,6 +26,7 @@ export default function Home() {
       <CTA/>
       <Highlight/>
       <Last/>
+      <FAQS/>
       <Footer/>
     </>
   );

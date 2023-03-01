@@ -3,43 +3,56 @@
 import { SearchIcon, AddIcon, WarningIcon ,MoonIcon} from '@chakra-ui/icons';
 
 
-import {Box,Image,List,ListItem,HStack,Button,Flex, Link} from "@chakra-ui/react"
-
+import {Box,Image,List,ListItem,HStack,Button,Flex, Link, Show, Hide} from "@chakra-ui/react"
+import { GiHamburgerMenu } from 'react-icons/gi';
+import Burger from './burger/Burger';
+import NavMenu from './nav/NavMenu';
 
 export default function Header(){
     return(
         <>
-         <Box pt={2} backgroundPosition='fixed'>
+         <Box  position='sticky' top={0} zIndex='1'>
     {/* left area */}
-    <Flex justifyContent={'space-around'} alignItems={'center'}>
+    <Flex justifyContent={'space-around'} alignItems={'center'} bg='white' py={'2'}>
     <Box>
       <HStack ml={'-40px'}>
     <Image src="/images/logo1.png" alt="logo" />
-    <List>
+
+  
+  <Hide below='md'>
+    {/* <List>
       <HStack spacing={'6'} ml={'30px'} fontWeight={'bold'}>
       <ListItem>Home</ListItem>
       <ListItem>About</ListItem>
       <ListItem>Contact</ListItem>
       </HStack>
      
-    </List>
+    </List> */}
+    <HStack spacing={10} pl="10">
+      <NavMenu/>
+    </HStack>
+    </Hide>
     </HStack>
     </Box>
    
 
 
     {/* right area */}
-    <Box>
-      <Box pt={5} as="span" pl={'15'}>
+    <HStack>
+      <Box   pl={'15'}>
       <SearchIcon w={'25'} h={'25'} />
       </Box>
-      <Box pt={5} as="span" pl={'15'} paddingRight="15px"> <MoonIcon w={'25'} h={'25'} /></Box>
-   
+      {/* <Box   pl={'15'} > 
+      <MoonIcon w={'25'} h={'25'} />
+      </Box> */}
+      <Show   below='md'> 
+      <Burger />
+      </Show>
 
         <Link href='http://piaic.org/' target={'_blank'}>
     <Button variant={'outline'}>Go to PIAIC</Button>
     </Link>
-    </Box>
+    </HStack>
     </Flex>
    </Box>
    </>

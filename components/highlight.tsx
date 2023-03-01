@@ -1,4 +1,4 @@
-import { Box, Button, Center, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Container, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { IoIosSpeedometer } from 'react-icons/Io';
@@ -22,8 +22,8 @@ export default function Highlight() {
       </Container>
 
       {/* second container */}
-      <Container maxW={1100} mt='35'>
-        <Flex gap={5}>
+      <Container maxW={1200} mt='35'>
+        <SimpleGrid columns={{base:1,md:2,lg:4}} gap={5}>
         <Card align='center' >
   <CardHeader>
     <Center color='blue.500'>
@@ -85,7 +85,7 @@ export default function Highlight() {
   </CardFooter>
 </Card>
 
-        </Flex>
+        </SimpleGrid>
       </Container>
     </>
   );

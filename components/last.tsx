@@ -14,14 +14,16 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 
 export default function Last() {
+  const { colorMode } = useColorMode();
   return (
     <>
       <Box>
-        <Container maxW={"100%"} bg={"gray.50"} py={"14"} mt={"65px"}>
+        <Container maxW={"100%"} bg={colorMode=="light" ?"gray.50" : "black"} py={"14"} mt={"65px"}>
           <Flex justifyContent={'space-around'} flexDirection={{base:"column",lg:"row"}}>
             <Box w={"50%"}>
               <Heading fontWeight={'semibold'}>Join our Newletter</Heading>

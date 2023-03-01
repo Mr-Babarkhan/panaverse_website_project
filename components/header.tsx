@@ -3,17 +3,21 @@
 import { SearchIcon, AddIcon, WarningIcon ,MoonIcon} from '@chakra-ui/icons';
 
 
-import {Box,Image,List,ListItem,HStack,Button,Flex, Link, Show, Hide} from "@chakra-ui/react"
+import {Box,Image,List,ListItem,HStack,Button,Flex, Link, Show, Hide, useColorMode} from "@chakra-ui/react"
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Burger from './burger/Burger';
+import { ColorModeSwitcher } from './ColorModeSwitcher/ColorModeSwitcher';
 import NavMenu from './nav/NavMenu';
 
 export default function Header(){
+  const { colorMode } = useColorMode();
+
+
     return(
         <>
          <Box  position='sticky' top={0} zIndex='1'>
     {/* left area */}
-    <Flex justifyContent={'space-around'} alignItems={'center'} bg='white' py={'2'}>
+    <Flex justifyContent={'space-around'} alignItems={'center'} bg={colorMode=="dark" ? "black" :"white"} py={'2'}>
     <Box>
       <HStack ml={'-40px'}>
     <Image src="/images/logo1.png" alt="logo" />
@@ -45,6 +49,7 @@ export default function Header(){
       {/* <Box   pl={'15'} > 
       <MoonIcon w={'25'} h={'25'} />
       </Box> */}
+      <ColorModeSwitcher/>
       <Show   below='md'> 
       <Burger />
       </Show>
